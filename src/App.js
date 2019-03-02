@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+if (typeof window !== 'undefined') {
+    window.jQuery = window.$ = require('jquery');
+    require('bootstrap');
+}
 
 class App extends Component {
+  
+  updateData = (result) => {
+    const data = result.data;
+    console.log(data);
+  }
+
+  componentWillMount() {
+    var csvFilePath = require("./data.csv");
+    var Papa = require("papaparse/papaparse.min.js");
+    Papa.parse(csvFilePath, {
+      header: true,
+      download: true,
+      skipEmptyLines: true,
+      complete: this.updateData
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+       <h3>Europian Restaurant</h3>
+       <form method="get" id="search">
+        <input type="text" name="search" placeholder="Search (by name or cuisine)" class="form-control"/>
+       </form>
+       
       </div>
     );
   }
