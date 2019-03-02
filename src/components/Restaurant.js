@@ -13,6 +13,7 @@ class Restaurant extends React.Component {
         Rating,
         ReviewsNo
       } = this.props.restaurantDetails;
+      // console.log(JSON.parse(Cuisine));
       return (
         <>
           <div className="col-md-6 well">
