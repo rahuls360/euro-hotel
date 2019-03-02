@@ -45,8 +45,15 @@ class App extends Component {
         <section id="restaurant">
           <div className="container-fluid">
             <div className="row">
-              <Restaurant restaurantDetails={this.state.data[0]} />
-              <Restaurant restaurantDetails={this.state.data[1]} />
+              {Object.keys(this.state.data).map(key => {
+                return (
+                  <Restaurant
+                    restaurantDetails={this.state.data[key]}
+                    key={key}
+                    index={key}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>
