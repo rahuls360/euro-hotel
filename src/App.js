@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   componentWillMount() {
-    var csvFilePath = require("./data.csv");
+    var csvFilePath = require("./data2.csv");
     var Papa = require("papaparse/papaparse.min.js");
     Papa.parse(csvFilePath, {
       header: true,
@@ -68,7 +68,7 @@ class App extends Component {
         <Pagination
           activePage={this.state.activePage}
           itemsCountPerPage={n}
-          totalItemsCount={450}
+          totalItemsCount={this.state.data.length / n}
           pageRangeDisplayed={5}
           onChange={this.handlePageChange}
         />
