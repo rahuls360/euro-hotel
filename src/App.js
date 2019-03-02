@@ -41,7 +41,15 @@ class App extends Component {
             className="form-control"
           />
         </form>
-        <Restaurant restaurantDetails={this.state.data[0]} />
+
+        <section id="restaurant">
+          <div className="container-fluid">
+            <div className="row">
+              <Restaurant restaurantDetails={this.state.data[0]} />
+              <Restaurant restaurantDetails={this.state.data[1]} />
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

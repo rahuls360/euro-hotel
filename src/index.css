@@ -1,3 +1,15 @@
-#search input{
+#search input {
     width: 60%;
+}
+
+#restaurant img {
+    max-height: 70px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid grey;
+}
+
+.well {
+    background-color: white;
 }
