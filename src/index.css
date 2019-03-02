@@ -11,5 +11,9 @@
 }
 
 .well {
-    background-color: white;
+    background-color: white !important;
+}
+
+.col-md-6.well {
+    max-height: 175px;
 }
